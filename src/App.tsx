@@ -1,7 +1,12 @@
 import React from "react";
+import Todos from "./components/Todos";
 
 function App() {
-  return <h1>Typescript</h1>;
+  const nav = ['Home', "About"]
+  return <div>
+    <h1>Typescript</h1>
+    <Todos items={nav}/>
+    </div>
 }
 
 export default App;
