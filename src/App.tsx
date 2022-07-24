@@ -1,11 +1,12 @@
 import React from "react";
 import Todos from "./components/Todos";
+import Todo from './models/todo';
 
 function App() {
-  const nav = ['Home', "About"]
+  const todos = [new Todo("Go for a walk"), new Todo("Eat snacks")]
   return <div>
     <h1>Typescript</h1>
-    <Todos items={nav}/>
+    <Todos items={todos}/>
     </div>
 }
 
