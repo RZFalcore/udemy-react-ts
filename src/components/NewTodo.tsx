@@ -6,17 +6,18 @@ const NewTodo : React.FC<{onAddTodo: (text: string) => void}> = ({onAddTodo}) =>
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const text = todoInputRef.current?.value;
-
         //  If value definitly will be not nullish : 
-        // const text = todoInputRef.current!.value;
+        const text = todoInputRef.current!.value;
+        //  otherwise :
+        // const text = todoInputRef.current?.value;
 
-        if (text?.trim().length === 0) {
+        if (text.trim().length === 0) {
             // Throw Error
             return
         }
         
         onAddTodo(text);
+        todoInputRef.current!.value = "";
     }
     return (
         <form onSubmit={submitHandler}>
