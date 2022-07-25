@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './TodoItem.module.css'
 
-const TodoItem: React.FC<{ id: number, text: string }> = ({id, text}) => {
+const TodoItem: React.FC<{ id: number, text: string, onRemoveTodo: () => void }>
+    = ({ id, text, onRemoveTodo }) => {
     return (
-        <li key={id}>
+        <li className={styles.item} key={id} onClick={onRemoveTodo}>
             <h6>{id}</h6>
-            <br/>
             <p>{text}</p>
         </li>
     );
