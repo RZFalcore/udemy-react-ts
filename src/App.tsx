@@ -14,10 +14,14 @@ function App() {
     setTodos(prevState => prevState.concat(newTodo));
   }
 
+  const removeTodoHandler = (id: number) => {
+    setTodos(prevState => prevState.filter(todo => todo.id !== id));
+  }
+
   return <div>
     <h1>Typescript</h1>
     <NewTodo onAddTodo={addTodoHandler} />
-    <Todos items={todos}/>
+    <Todos items={todos} onRemoveTodo={removeTodoHandler} />
     </div>
 }
 
